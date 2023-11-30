@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado Libros</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+
+        body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #4caf50; /* Set a green color for the heading */
+        }
+
+        table {
+            background-color: #c8e6c9; /* Set a pastel green background color for the table */
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #4caf50; /* Set a green color for the table header */
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #4caf50; /* Set a green color for the button */
+            color: #fff;
+        }
+
+        .btn-danger, .btn-warning {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12">
+            <h3>Listado de Sedes de I.E REINO DE ESPAÑA</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Salon</th>
+                        <th scope="col">Profesor</th>
+                        <th scope="col">Numero de Alumnos</th>
+                        <th scope="col">Curso/Materia</th>
+                        <th scope="col">Sede</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let salon of data">
+                        <th scope="row">{{salon.idSalon}}</th>
+                        <td>{{salon.profesor}}</td>
+                        <td>{{salon.nmroAlum}}</td>
+                        <td>{{salon.curso}}</td>
+                        <td>{{salon.sede}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="eliminar(salon.idSalon)">Eliminar</button>
+                            <button class="btn btn-warning" (click)="actualizar(salon.idSalon)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary mt-3" (click)="nuevo()">Nuevo Registro</button>
+        </div>
+    </div>
+</body>
+</html>

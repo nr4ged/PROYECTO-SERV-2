@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado Libros</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+
+        body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #ff9800; /* Set an orange color for the heading */
+        }
+
+        table {
+            background-color: #ffcc80; /* Set a pastel orange background color for the table */
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff9800; /* Set an orange color for the table header */
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #ff9800; /* Set an orange color for the button */
+            color: #fff;
+        }
+
+        .btn-danger, .btn-warning {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12">
+            <h3>Listado de Sedes de I.E REINO DE ESPAÑA</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Sede</th>
+                        <th scope="col">Distrito</th>
+                        <th scope="col">Provincia</th>
+                        <th scope="col">Capacidad Máxima</th>
+                        <th scope="col">Número de Salones</th>
+                        <th scope="col">Id de Director</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elemento of data">
+                        <th scope="row">{{elemento.id}}</th>
+                        <td>{{elemento.distrito}}</td>
+                        <td>{{elemento.provincia}}</td>
+                        <td>{{elemento.cantMax}}</td>
+                        <td>{{elemento.cantSalones}}</td>
+                        <td>{{elemento.director}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="eliminar(elemento.id)">Eliminar</button>
+                            <button class="btn btn-warning" (click)="actualizar(elemento.id)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-primary mt-3" (click)="nuevo()" style="margin-bottom: 50px;">Nuevo Registro</button>
+        </div>
+    </div>
+</body>
+</html>

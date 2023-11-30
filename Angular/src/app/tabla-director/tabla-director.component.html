@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listado Libros</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+
+        body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #2196f3; /* Set a blue color for the heading */
+        }
+
+        table {
+            background-color: #bbdefb; /* Set a pastel blue background color for the table */
+            margin-top: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #2196f3; /* Set a blue color for the table header */
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #2196f3; /* Set a blue color for the button */
+            color: #fff;
+        }
+
+        .btn-danger, .btn-warning {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-12">
+            <h3>Listado de Directores</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Director</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Dni</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let direc of data">
+                        <th scope="row">{{direc.idDirector}}</th>
+                        <td>{{direc.nombre}}</td>
+                        <td>{{direc.apellido}}</td>
+                        <td>{{direc.edad}}</td>
+                        <td>{{direc.dni}}</td>
+                        <td>
+                            <button class="btn btn-danger" (click)="eliminar(direc.idDirector)">Eliminar</button>
+                            <button class="btn btn-warning" (click)="actualizar(direc.idDirector)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>
+                No se puede eliminar a alguien que está siendo director actualmente!
+            </h3>
+            <h6>
+                Pero sí editar
+            </h6>
+            <button class="btn btn-primary mt-3" (click)="nuevo()" style="margin-bottom: 20px;">Nuevo Registro</button>
+        </div>
+    </div>
+</body>
+</html>
