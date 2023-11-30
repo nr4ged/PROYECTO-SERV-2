@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <style>
+
+        body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 100% del alto de la ventana */
+        }
+
+        h1 {
+            color: #fff; /* Color del texto */
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button1 {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #512da8; /* Color del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button2 {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2D66A8; /* Color del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button3 {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2DA84C; /* Color del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button4 {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #D37E2B; /* Color del botón */
+            color: #fff; /* Color del texto del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            background-color: #333; /* Color del fondo del footer */
+            color: #fff; /* Color del texto del footer */
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>I.E Reino de España</h1>
+    <div>
+        
+
+        <div class="button-container">
+            
+            <button class="button1"><a href="/ingresarAlum">Formulario Alumno</a></button>
+            <button class="button2"><a href="/ingresarDir">Formulario Director</a></button>
+            <button class="button3"><a href="/ingresarSalon">Formulario Salon</a></button>
+            <button class="button4"><a href="/ingresar">Formulario Sede</a></button>
+        </div>
+        <div class="button-container">
+            <button class="button1"><a href="/listarAlum">Listado Alumno</a></button>
+            <button class="button2"><a href="/listarDir">Listado Director</a></button>
+            <button class="button3"><a href="/listarSalon">Listado Salon</a></button>
+            <button class="button4"><a href="/listar">Listado Sede</a></button>
+
+            
+        </div>
+        <br>
+    <router-outlet></router-outlet>
+    </div>
+
+    
+    <div style="background: linear-gradient(to right, #008080, #FFB6C1);">
+        <footer>
+            <p>© 2023 LUREN.COMPANY | Todos los derechos reservados</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+
+

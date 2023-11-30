@@ -1,0 +1,30 @@
+{
+    "/Director/*":{
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug",
+        "pathWrite": {"^/Director": "http://localhost:8080/Director"}
+    },
+    "/Sede/*":{
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug",
+        "pathWrite": {"^/Sede": "http://localhost:8080/Sede"}
+    },
+    "/Alumno/*":{
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug",
+        "pathWrite": {"^/Alumno": "http://localhost:8080/Alumno"}
+    },
+    "/Salon/*":{
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "loglevel": "debug",
+        "pathWrite": {"^/Salon": "http://localhost:8080/Salon"}
+    }
+}
