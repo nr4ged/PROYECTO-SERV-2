@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Director</title>
+    <style>
+         body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .card {
+            background-color: #bbdefb; /* Set a pastel blue background color */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #2196f3; /* Set a blue color for the button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #1565c0; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="card" >
+        <div class="card-body">
+            <form [formGroup]="frmDirector" (ngSubmit)="guardarDirector()" >
+                <div>
+                    <label class="form-label">
+                        Ingrese Codigo
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Codigo" name="idDirector" formControlName="idDirector">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Nombre
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Nombre" name="nombre" formControlName="nombre">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Apellido
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Apellido"  name="apellido" formControlName="apellido">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Edad
+                    </label>
+                    <input type="number" class="form-control" placeholder="Ingrese Edad"  name="edad" formControlName="edad">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Dni
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Dni"  name="dni" formControlName="dni" maxlength="8">
+                </div>
+    
+                
+                <button class="btn btn-primary mt-2">Guardar</button>
+           </form>
+        </div>
+    </div>
+</body>
+</html>

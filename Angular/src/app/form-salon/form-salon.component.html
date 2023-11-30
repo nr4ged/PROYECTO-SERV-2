@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Salon</title>
+    <style>
+         body {
+            background: linear-gradient(to right, #008080, #FFB6C1);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        .card {
+            background-color: #c8e6c9; /* Set a pastel green background color */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #4caf50; /* Set a green color for the button */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #388e3c; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="frmSalon" (ngSubmit)="guardarSalon()">
+                <div>
+                    <label class="form-label">
+                        Ingrese Codigo
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Codigo" name="idSalon" formControlName="idSalon">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Profesor
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Nombre Profe" name="profesor" formControlName="profesor">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Cantidad Alumnos
+                    </label>
+                    <input type="number" class="form-control" placeholder="Ingrese Provincia"  name="nmroAlum" formControlName="nmroAlum">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Curso
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Curso" name="curso" formControlName="curso">
+                </div>
+                <div>
+                    <label class="form-label">
+                        Sede
+                    </label>
+                    <input type="text" class="form-control" placeholder="Ingrese Id Sede" name="sede" formControlName="sede">
+                </div>
+    
+                <button class="btn btn-primary mt-2">Guardar</button>
+           </form>
+        </div>
+    </div>
+</body>
+</html>
